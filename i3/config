@@ -144,9 +144,9 @@ bindsym Print exec "flameshot gui"
 
 # Define colors variables:
 # bg tab mode
-set $color1     #1d2021
-set $color2     #d8a657
-set $color3     #fabd3f
+set $color1     #1e2326
+set $color2     #a7c080
+set $color3     #83c092
 set $color4     #928374
 
 # define colors for windows:
