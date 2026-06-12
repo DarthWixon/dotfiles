@@ -1,0 +1,31 @@
+#!/usr/bin/env sh
+
+# Reload scripting addition when Dock restarts (requires partial SIP disable + passwordless sudo)
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+# Layout
+yabai -m config layout bsp
+
+# Gaps — mirroring i3 defaults (inner 25, outer 5)
+yabai -m config window_gap 25
+yabai -m config top_padding 5
+yabai -m config bottom_padding 5
+yabai -m config left_padding 5
+yabai -m config right_padding 5
+
+# Borders (Gruvbox palette, matching i3/kitty theme)
+yabai -m config window_border on
+yabai -m config window_border_width 2
+yabai -m config active_window_border_color 0xffa7c080
+yabai -m config normal_window_border_color 0xff928374
+
+# Place new windows into the focused space
+yabai -m config window_origin_display focused
+
+# Float rules for apps that resist tiling
+yabai -m rule --add app="System Settings" manage=off
+yabai -m rule --add app="Calculator" manage=off
+yabai -m rule --add app="Archive Utility" manage=off
+yabai -m rule --add app="Activity Monitor" manage=off
+yabai -m rule --add app="1Password" manage=off
