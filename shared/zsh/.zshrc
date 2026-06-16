@@ -7,6 +7,12 @@ plugins=(git python ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
+if command -v nvim &> /dev/null; then
+    export EDITOR=nvim
+else
+    export EDITOR=vim
+fi
+
 # Aliases
 alias bottles-cli="flatpak run --command=bottles-cli com.usebottles.bottles"
 alias battlenet="bottles-cli run -b WoW -p Battle.net"
@@ -22,4 +28,4 @@ alias sz="source ~/.zshrc"
 alias protontricks='flatpak run com.github.Matoking.protontricks'
 alias protontricks-launch='flatpak run --command=protontricks-launch com.github.Matoking.protontricks'
 alias cdwow="cd .var/app/com.usebottles.bottles/data/bottles/bottles/WoW/drive_c/Program\ Files\ \(x86\)/World\ of\ Warcraft/_retail_/"
-alias spotify='spotify-launcher --skip-update'# Aliases
+alias spotify='spotify-launcher --skip-update'
