@@ -1,6 +1,5 @@
 # Use windows key as $mod
 set $mod Mod4
-
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:monospace 8
@@ -42,11 +41,11 @@ gaps inner 25
 gaps outer 5
 
 # edit gap sizes
-bindsym $mod+s gaps inner current plus 5
-bindsym $mod+Shift+s gaps inner current minus 5
+## bindsym $mod+s gaps inner current plus 5
+## bindsym $mod+Shift+s gaps inner current minus 5
 
-bindsym $mod+z gaps outer current plus 5
-bindsym $mod+Shift+z gaps outer current minus 5
+## bindsym $mod+z gaps outer current plus 5
+## bindsym $mod+Shift+z gaps outer current minus 5
 
 # toggle split mode betwen vertical and horizontal
 bindsym $mod+t split toggle
@@ -135,8 +134,11 @@ bindsym $mod+Shift+d exec "discord"
 # launch firefox
 bindsym $mod+Shift+f exec "firefox"
 
-# launch flameshot
-bindsym Print exec "flameshot gui"
+# launch spotify
+bindsym $mod+shift+s exec "spotify-launcher --skip-update"
+
+# use maim for screenshots
+bindsym Print exec "maim -s | xclip -selection clipboard -t image/png"
 
 #######################
 # Appearance Settings #
@@ -156,8 +158,11 @@ client.unfocused             $color4           $color1         $color4          
 client.focused_inactive      $color4           $color1         $color4           $color1         $color1
 client.urgent                $color3           $color3         $color2           $color2         $color1
 
-# set desktop background on startup
-exec_always feh --bg-fill ~/pictures/wallpaper.jpg
+# set up monitors
+exec_always xrandr --output DisplayPort-0 --off --output DisplayPort-1 --off --output DisplayPort-2 --primary --mode 2560x1440 --pos 1080x541 --rotate normal --output HDMI-A-0 --mode 1920x1080 --pos 0x0 --rotate right --output HDMI-A-1-1 --off --output DisplayPort-1-3 --off --output DisplayPort-1-4 --off --output DisplayPort-1-5 --off   
+
+# set desktop backgrounds on startup
+exec_always feh --bg-fill ~/pictures/wallpapers/wallpaper_big.jpg ~/pictures/wallpapers/vertical_wallpaper.jpg
 
 # start polybar
 exec_always --no-startup-id ~/.config/polybar/i3_bar.sh
