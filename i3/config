@@ -126,7 +126,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym $mod+Shift+p exec "kitty --class wow ~/code/scripts/launchwow.sh"; workspace 3
 
 # lock screen
-bindsym $mod+Shift+m exec "i3lock -uei pictures/wallpaper.png"
+bindsym $mod+Shift+m exec --no-startup-id sh -c "$HOME/dotfiles/lockscreen.sh"
 
 # lauch discord
 bindsym $mod+Shift+d exec "discord"
