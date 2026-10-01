@@ -15,6 +15,7 @@ Links created:
 - `i3` → `~/.config/i3`
 - `polybar` → `~/.config/polybar`
 - `picom` → `~/.config/picom`
+- `colors` → `~/.config/colors`
 - `starship/starship.toml` → `~/.config/starship.toml` (single file, not a directory)
 
 ## Structure
@@ -25,6 +26,7 @@ i3/         # window manager + workspace layouts
 polybar/    # status bar
 picom/      # compositor
 starship/   # shell prompt
+colors/     # shared palette + build.sh template renderer
 .zshrc      # shell
 install.sh
 ```
@@ -40,14 +42,16 @@ install.sh
 
 ### Color theme
 
-Consistent Everforest/Gruvbox dark palette across all tools, but colors are not centrally sourced — they are duplicated in several places:
+Everforest Dark (medium). `colors/everforest.ini` (`[palette]` section, official Everforest names like `bg0`, `fg`, `green`, `grey1`) is the single source of truth, linked to `~/.config/colors/everforest.ini`.
 
-- `polybar/colors.ini` — `[everforest]` section; referenced as `${everforest.NAME}` in `modules.ini` and `config.ini`
-- `i3/config` — inline as `$color1`–`$color4`
-- `kitty/kitty.conf` — inline hex values
-- `starship/starship.toml` — `[palettes.everforest]`
+How each program gets its colours:
 
-When updating the palette, all of these need changing.
+- **polybar** — `config.ini` includes the palette directly; `colors.ini` maps polybar's own names (`${everforest.black}` etc.) onto `${palette.NAME}`
+- **i3** — `i3/theme.conf.tmpl` uses `{{name}}` placeholders; `colors/build.sh` renders it to `i3/theme.conf` (gitignored), which `i3/config` includes. i3 can't use variables set in an included file, so templating is required
+- **kitty** — `kitty/everforest-dark-medium.conf.tmpl` renders to the theme file that `kitty.conf` includes
+- **starship** — the whole config is `starship/starship.toml.tmpl`; edit the template (prompt layout included), not the rendered `starship.toml`
+
+To add a program: write `<file>.tmpl` with `{{name}}` placeholders and add the rendered file to `.gitignore`. `build.sh` renders every `*.tmpl` in the repo and fails on unknown names. `install.sh` runs it before linking.
 
 ### Polybar split config
 

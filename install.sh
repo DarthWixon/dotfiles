@@ -34,6 +34,10 @@ if [ "$OS" != "Linux" ]; then
     exit 1
 fi
 
+"$DOTFILES/colors/build.sh"
+log "built colour files"
+
+link colors            ~/.config/colors
 link kitty             ~/.config/kitty
 link .zshrc            ~/.zshrc
 link i3                ~/.config/i3

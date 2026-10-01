@@ -147,19 +147,8 @@ bindsym Print exec "maim -s | xclip -selection clipboard -t image/png"
 # Appearance Settings #
 #######################
 
-# Everforest Dark (medium) palette — see https://github.com/sainnhe/everforest
-set $ef_bg0    #2d353b
-set $ef_green  #a7c080
-set $ef_aqua   #83c092
-set $ef_red    #e67e80
-set $ef_grey1  #859289
-
-# define colors for windows:
-#class                          border          bground         text            indicator       child_border
-client.focused               $ef_green         $ef_bg0         $ef_aqua          $ef_green       $ef_bg0
-client.unfocused             $ef_grey1         $ef_bg0         $ef_grey1         $ef_green       $ef_bg0
-client.focused_inactive      $ef_grey1         $ef_bg0         $ef_grey1         $ef_bg0         $ef_bg0
-client.urgent                $ef_red           $ef_red         $ef_bg0           $ef_red         $ef_bg0
+# Window colours — rendered from theme.conf.tmpl by colors/build.sh
+include ~/.config/i3/theme.conf
 
 # set up monitors
 exec_always xrandr --output DisplayPort-0 --off --output DisplayPort-1 --off --output DisplayPort-2 --primary --mode 2560x1440 --pos 1080x541 --rotate normal --output HDMI-A-0 --mode 1920x1080 --pos 0x0 --rotate right --output HDMI-A-1-1 --off --output DisplayPort-1-3 --off --output DisplayPort-1-4 --off --output DisplayPort-1-5 --off   
