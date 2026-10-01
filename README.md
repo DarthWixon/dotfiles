@@ -8,7 +8,7 @@ Personal Linux dotfiles: i3, polybar, picom, kitty, zsh, starship.
 ./install.sh
 ```
 
-Renders colour templates (`colors/build.sh`), then symlinks each config into place (`colors`, `kitty`, `i3`, `polybar`, `picom` → `~/.config/`, `.zshrc` → `~/`, `starship/starship.toml` → `~/.config/starship.toml`), backing up any existing target to `*.bak`. Re-run it after pulling if paths have moved. Linux only — it aborts elsewhere.
+Renders colour templates (`colors/build.sh`), then symlinks each config into place (`colors`, `kitty`, `i3`, `polybar`, `picom` → `~/.config/`, `.zshrc` → `~/`, `starship/starship.toml` → `~/.config/starship.toml`, `claude/CLAUDE.md` → `~/.claude/CLAUDE.md`), backing up any existing target to `*.bak`. Re-run it after pulling if paths have moved. Linux only — it aborts elsewhere.
 
 ## Required but not in git
 

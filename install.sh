@@ -44,5 +44,6 @@ link i3                ~/.config/i3
 link polybar           ~/.config/polybar
 link picom             ~/.config/picom
 link starship/starship.toml ~/.config/starship.toml
+link claude/CLAUDE.md   ~/.claude/CLAUDE.md
 
 log "Done."

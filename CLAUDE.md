@@ -17,6 +17,7 @@ Links created:
 - `picom` → `~/.config/picom`
 - `colors` → `~/.config/colors`
 - `starship/starship.toml` → `~/.config/starship.toml` (single file, not a directory)
+- `claude/CLAUDE.md` → `~/.claude/CLAUDE.md` (single file; never link the whole `~/.claude`, it holds credentials and session data)
 
 ## Structure
 
@@ -27,6 +28,7 @@ polybar/    # status bar
 picom/      # compositor
 starship/   # shell prompt
 colors/     # shared palette + build.sh template renderer
+claude/     # personal Claude Code CLAUDE.md
 .zshrc      # shell
 install.sh
 ```
