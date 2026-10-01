@@ -4,6 +4,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 These dotfiles target Linux only.
 
+## Git
+
+Commit and push straight to `main`; no feature branches or pull requests. This overrides the "branch before committing on the default branch" rule in the personal `claude/CLAUDE.md`. Committing and pushing still happen only when asked.
+
 ## Deployment
 
 Run `./install.sh` from the repo root. It symlinks each config directory into place (not individual files) and backs up anything already at the target path with a `.bak` suffix. The script aborts on non-Linux systems.
