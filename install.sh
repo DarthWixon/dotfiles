@@ -34,10 +34,11 @@ if [ "$OS" != "Linux" ]; then
     exit 1
 fi
 
-link kitty   ~/.config/kitty
-link .zshrc  ~/.zshrc
-link i3      ~/.config/i3
-link polybar ~/.config/polybar
-link picom   ~/.config/picom
+link kitty             ~/.config/kitty
+link .zshrc            ~/.zshrc
+link i3                ~/.config/i3
+link polybar           ~/.config/polybar
+link picom             ~/.config/picom
+link starship/starship.toml ~/.config/starship.toml
 
 log "Done."

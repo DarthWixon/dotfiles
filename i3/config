@@ -6,6 +6,9 @@ font pango:monospace 8
 
 exec --no-startup-id dex --autostart --environment i3
 
+# set mouse cursor on load to not be a spinning wheel
+exec_always --no-startup-id xsetroot -cursor_name left_ptr
+
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
@@ -144,19 +147,19 @@ bindsym Print exec "maim -s | xclip -selection clipboard -t image/png"
 # Appearance Settings #
 #######################
 
-# Define colors variables:
-# bg tab mode
-set $color1     #1e2326
-set $color2     #a7c080
-set $color3     #83c092
-set $color4     #928374
+# Everforest Dark (medium) palette — see https://github.com/sainnhe/everforest
+set $ef_bg0    #2d353b
+set $ef_green  #a7c080
+set $ef_aqua   #83c092
+set $ef_red    #e67e80
+set $ef_grey1  #859289
 
 # define colors for windows:
 #class                          border          bground         text            indicator       child_border
-client.focused               $color2           $color1         $color3           $color2         $color1
-client.unfocused             $color4           $color1         $color4           $color2         $color1
-client.focused_inactive      $color4           $color1         $color4           $color1         $color1
-client.urgent                $color3           $color3         $color2           $color2         $color1
+client.focused               $ef_green         $ef_bg0         $ef_aqua          $ef_green       $ef_bg0
+client.unfocused             $ef_grey1         $ef_bg0         $ef_grey1         $ef_green       $ef_bg0
+client.focused_inactive      $ef_grey1         $ef_bg0         $ef_grey1         $ef_bg0         $ef_bg0
+client.urgent                $ef_red           $ef_red         $ef_bg0           $ef_red         $ef_bg0
 
 # set up monitors
 exec_always xrandr --output DisplayPort-0 --off --output DisplayPort-1 --off --output DisplayPort-2 --primary --mode 2560x1440 --pos 1080x541 --rotate normal --output HDMI-A-0 --mode 1920x1080 --pos 0x0 --rotate right --output HDMI-A-1-1 --off --output DisplayPort-1-3 --off --output DisplayPort-1-4 --off --output DisplayPort-1-5 --off   

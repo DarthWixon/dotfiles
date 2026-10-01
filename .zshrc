@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="robbyrussell"
+ZSH_THEME=""
 
 plugins=(git python ssh-agent)
 
@@ -12,6 +12,8 @@ if command -v nvim &> /dev/null; then
 else
     export EDITOR=vim
 fi
+
+export PATH="$HOME/.npm-global/bin:$PATH"
 
 # Aliases
 alias bottles-cli="flatpak run --command=bottles-cli com.usebottles.bottles"
@@ -29,3 +31,5 @@ alias protontricks='flatpak run com.github.Matoking.protontricks'
 alias protontricks-launch='flatpak run --command=protontricks-launch com.github.Matoking.protontricks'
 alias cdwow="cd .var/app/com.usebottles.bottles/data/bottles/bottles/WoW/drive_c/Program\ Files\ \(x86\)/World\ of\ Warcraft/_retail_/"
 alias spotify='spotify-launcher --skip-update'
+
+eval "$(starship init zsh)"

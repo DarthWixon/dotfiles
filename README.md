@@ -1,6 +1,6 @@
 # dotfiles
 
-Personal Linux dotfiles: i3, polybar, picom, kitty, zsh.
+Personal Linux dotfiles: i3, polybar, picom, kitty, zsh, starship.
 
 ## Install
 
@@ -8,13 +8,13 @@ Personal Linux dotfiles: i3, polybar, picom, kitty, zsh.
 ./install.sh
 ```
 
-Symlinks each config into place (`kitty`, `i3`, `polybar`, `picom` → `~/.config/`, `.zshrc` → `~/`), backing up any existing target to `*.bak`. Re-run it after pulling if paths have moved. Linux only — it aborts elsewhere.
+Symlinks each config into place (`kitty`, `i3`, `polybar`, `picom` → `~/.config/`, `.zshrc` → `~/`, `starship/starship.toml` → `~/.config/starship.toml`), backing up any existing target to `*.bak`. Re-run it after pulling if paths have moved. Linux only — it aborts elsewhere.
 
 ## Required but not in git
 
 These need to exist on the machine; the configs reference them:
 
-- **Packages**: `i3`, `polybar`, `picom`, `kitty`, `rofi`, `feh`, `i3lock`, `xss-lock`, `nm-applet`, `dex`, `maim`, `xclip`, `ckb-next`, and PulseAudio/PipeWire (`pactl`).
+- **Packages**: `i3`, `polybar`, `picom`, `kitty`, `starship`, `rofi`, `feh`, `i3lock`, `xss-lock`, `nm-applet`, `dex`, `maim`, `xclip`, `ckb-next`, and PulseAudio/PipeWire (`pactl`).
 - **oh-my-zsh** at `~/.oh-my-zsh` (`.zshrc` sources it; plugins: `git`, `python`, `ssh-agent`).
 - **Fonts**: `VictorMono Nerd Font Mono` (kitty), `Roboto Condensed`, `Font Awesome 6` (Free/Solid/Brands), `UbuntuMono Nerd Font` (polybar).
 - **Wallpapers**: `~/pictures/wallpapers/wallpaper_big.jpg`, `~/pictures/wallpapers/vertical_wallpaper.jpg`, and `~/pictures/wallpaper.png` (lock screen).

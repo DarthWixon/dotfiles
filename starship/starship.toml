@@ -1,0 +1,40 @@
+palette = "everforest"
+
+format = """
+[](bg0)\
+$username\
+$hostname\
+$directory\
+[](fg:bg0 bg:bg_dim)\
+$git_branch\
+$git_status\
+[](fg:bg_dim)\
+$cmd_duration\
+$character
+"""
+
+[palettes.everforest]
+bg0     = "#2d353b"
+bg_dim  = "#232a2e"
+fg      = "#d3c6aa"
+red     = "#e67e80"
+orange  = "#e69875"
+yellow  = "#dbbc7f"
+green   = "#a7c080"
+aqua    = "#83c092"
+blue    = "#7fbbb3"
+purple  = "#d699b6"
+grey1   = "#859289"
+
+[directory]
+style = "bg:bg0 fg:fg"
+
+[git_branch]
+style = "bg:bg_dim fg:green"
+
+[git_status]
+style = "bg:bg_dim fg:yellow"
+
+[character]
+success_symbol = "[❯](green)"
+error_symbol = "[❯](red)"

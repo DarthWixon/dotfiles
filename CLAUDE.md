@@ -15,6 +15,7 @@ Links created:
 - `i3` → `~/.config/i3`
 - `polybar` → `~/.config/polybar`
 - `picom` → `~/.config/picom`
+- `starship/starship.toml` → `~/.config/starship.toml` (single file, not a directory)
 
 ## Structure
 
@@ -23,6 +24,7 @@ kitty/      # terminal
 i3/         # window manager + workspace layouts
 polybar/    # status bar
 picom/      # compositor
+starship/   # shell prompt
 .zshrc      # shell
 install.sh
 ```
@@ -38,13 +40,14 @@ install.sh
 
 ### Color theme
 
-Consistent Everforest/Gruvbox dark palette across all tools, but colors are not centrally sourced — they are duplicated in three places:
+Consistent Everforest/Gruvbox dark palette across all tools, but colors are not centrally sourced — they are duplicated in several places:
 
-- `polybar/colors.ini` — `[gruvbox]` section; referenced as `${gruvbox.NAME}` in `modules.ini` and `config.ini`
+- `polybar/colors.ini` — `[everforest]` section; referenced as `${everforest.NAME}` in `modules.ini` and `config.ini`
 - `i3/config` — inline as `$color1`–`$color4`
 - `kitty/kitty.conf` — inline hex values
+- `starship/starship.toml` — `[palettes.everforest]`
 
-When updating the palette, all three need changing.
+When updating the palette, all of these need changing.
 
 ### Polybar split config
 
