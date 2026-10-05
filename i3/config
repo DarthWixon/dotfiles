@@ -5,6 +5,7 @@ set $mod Mod4
 font pango:monospace 8
 
 exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id ~/code/scripts/steam-desktop-gen.sh
 
 # set mouse cursor on load to not be a spinning wheel
 exec_always --no-startup-id xsetroot -cursor_name left_ptr
