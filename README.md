@@ -23,4 +23,5 @@ These need to exist on the machine; the configs reference them:
 ## Machine-specific
 
 - Polybar wifi: set `interface` in `polybar/modules.ini` (`[module/wlan]`) to your device (`ip link`).
-- Monitor layout: the `xrandr` line in `i3/config` is hardcoded to specific outputs — edit for your setup.
+- Monitor layout: the `xrandr` line in `i3/config` is hardcoded to specific outputs — edit for your setup. Output names depend on the X driver (`DP-3`/`HDMI-1` under modesetting, `DisplayPort-N`/`HDMI-A-N` under the old amdgpu DDX), so check `xrandr --query` after a driver change.
+- Xorg driver: no `xorg.conf` or `xorg.conf.d` driver section is needed. Xorg's built-in `modesetting` driver handles AMD GPUs; don't install `xf86-video-amdgpu` or add a config forcing `Driver "amdgpu"` (the former segfaulted Xorg, and the latter gives "no screens found" without it).
