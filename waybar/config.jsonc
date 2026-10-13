@@ -1,0 +1,45 @@
+// Rebuilt from the polybar layout (polybar/config.ini, modules.ini).
+// Colours and fonts live in style.css, rendered from style.css.tmpl.
+{
+    "position": "top",
+    "height": 27,
+    "spacing": 16,
+    "modules-left": ["sway/window"],
+    "modules-right": ["network", "pulseaudio", "clock", "custom/power"],
+
+    "sway/window": {
+        "format": "[  ]    {title}",
+        "max-length": 100
+    },
+
+    "network": {
+        // Machine-specific: the wifi device from `ip link`
+        "interface": "wlp15s0",
+        "interval": 3,
+        "format-wifi": "{icon}  {essid}  {signalStrength}%",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "format-disconnected": "no wifi",
+        "tooltip-format": "{ipaddr}"
+    },
+
+    "pulseaudio": {
+        "format": "[  ]    {volume}%",
+        "format-muted": "[  ]  muted",
+        // Polybar toggled mute on left click; keep that
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pavucontrol"
+    },
+
+    "clock": {
+        "interval": 1,
+        "format": "[  ]    {:%a  %d %b  %H:%M:%S}",
+        "tooltip": false
+    },
+
+    "custom/power": {
+        "format": "",
+        "tooltip": false,
+        // swaynag's close button is the cancel option
+        "on-click": "swaynag -t warning -m 'Power' -B 'Reboot' 'systemctl reboot' -B 'Power off' 'systemctl poweroff'"
+    }
+}

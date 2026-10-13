@@ -1,0 +1,34 @@
+/* Generated from style.css.tmpl by colors/build.sh — edit that and colors/everforest.ini, not this file.
+   Matches the polybar look: transparent bar, a coloured underline per module. */
+
+* {
+    /* UbuntuMono Nerd Font supplies the icon glyphs Roboto lacks */
+    font-family: "Roboto Condensed", "Font Awesome 7 Free", "UbuntuMono Nerd Font";
+    font-size: 15px;
+    font-weight: bold;
+}
+
+window#waybar {
+    background: transparent;
+    color: {{fg}};
+}
+
+#window,
+#network,
+#pulseaudio,
+#clock,
+#custom-power {
+    padding: 0 10px;
+}
+
+/* box-shadow stands in for polybar's 3px underline */
+#network       { box-shadow: inset 0 -3px {{green}}; }
+#pulseaudio    { box-shadow: inset 0 -3px {{blue}}; }
+#clock         { box-shadow: inset 0 -3px {{aqua}}; }
+#custom-power  { box-shadow: inset 0 -3px {{red}}; color: {{red}}; }
+
+#network.disconnected,
+#pulseaudio.muted {
+    color: {{red}};
+    box-shadow: inset 0 -3px {{red}};
+}

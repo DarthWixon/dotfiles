@@ -41,6 +41,8 @@ link colors            ~/.config/colors
 link kitty             ~/.config/kitty
 link .zshrc            ~/.zshrc
 link i3                ~/.config/i3
+link sway              ~/.config/sway
+link waybar            ~/.config/waybar
 link polybar           ~/.config/polybar
 link picom             ~/.config/picom
 link starship/starship.toml ~/.config/starship.toml
