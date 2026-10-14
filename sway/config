@@ -150,6 +150,11 @@ include ~/.config/sway/theme.conf
 output DP-3     mode 2560x1440@59.951Hz pos 1080 541
 output HDMI-A-1 mode 1920x1080@60Hz     pos 0 0 transform 90
 
+# Sway has no primary output, so without these it numbers workspaces in the
+# order it finds the outputs and the vertical monitor ends up with 1
+workspace 1 output DP-3
+workspace 2 output HDMI-A-1
+
 # desktop backgrounds (sway runs swaybg itself)
 output DP-3     bg ~/pictures/wallpapers/wallpaper_big.jpg fill
 output HDMI-A-1 bg ~/pictures/wallpapers/vertical_wallpaper.jpg fill
